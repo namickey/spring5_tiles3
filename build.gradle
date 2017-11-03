@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.3'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tomcat{
+    contextPath = 'demo'
+}
+
+dependencies {
+    compile ("org.springframework:spring-webmvc:5.0.1.RELEASE")
+    compile ("org.hibernate:hibernate-validator:6.0.4.Final")
+    compile ("org.apache.tiles:tiles-jsp:3.0.7")
+    compile ("javax.servlet:jstl:1.2")
+    compile ("org.slf4j:slf4j-nop:1.7.6")
+    compileOnly ('org.projectlombok:lombok:1.16.18')
+    def tomcatVersion = '8.0.38'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}",
+            "org.apache.tiles:tiles-jsp:3.0.7"
+}
