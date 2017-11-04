@@ -9,7 +9,6 @@
 
 <li>
 <ul><a href="bar/regist/index">regist</a></ul>
-<ul><a href="bar/search/index">search</a></ul>
 </li>
 
 </body>
