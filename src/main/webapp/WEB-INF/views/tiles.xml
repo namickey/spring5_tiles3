@@ -9,9 +9,9 @@
         <put-attribute name="body" value="" />
     </definition>
 
-    <definition name="regist" extends="baseLayout">
-        <put-attribute name="title" value="Shop" />
-        <put-attribute name="body" value="/WEB-INF/views/regist.jsp" />
+    <definition name="bar/regist" extends="baseLayout">
+        <put-attribute name="title" value="Bar" />
+        <put-attribute name="body" value="/WEB-INF/views/bar/regist.jsp" />
     </definition>
 
 </tiles-definitions>
