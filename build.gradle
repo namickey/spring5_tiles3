@@ -32,7 +32,7 @@ dependencies {
     compile ("javax.servlet:jstl:1.2")
     compile ("org.slf4j:slf4j-nop:1.7.6")
     compileOnly ('org.projectlombok:lombok:1.16.18')
-    providedCompile ("javax.servlet:javax.servlet-api:3.1.0")
+    compileOnly ("javax.servlet:javax.servlet-api:3.1.0")
     def tomcatVersion = '8.0.38'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
             "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
@@ -40,6 +40,5 @@ dependencies {
             "org.apache.tiles:tiles-jsp:3.0.7"
 }
 
-tomcatRun{
-    stopPort = 8090
-}
+[tomcatRun, tomcatRunWar, tomcatStop]*.stopPort = 8090
+[tomcatRun, tomcatRunWar, tomcatStop]*.stopKey = 'foo'
