@@ -1,12 +1,15 @@
 package demo.controller.bar;
 
-import lombok.Data;
-
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Size;
+
+import demo.validator.SomeCheck;
+import lombok.Data;
 
 @Data
 public class RegistBarForm {
-    @Size(max = 2)
+
+	@Size(max = 2)
+    @SomeCheck
     private String barName;
+
 }
