@@ -17,7 +17,6 @@
         ├── java
         │   └── demo
         │       ├── controller
-        │       │   ├── Index.java
         │       │   └── bar
         │       │       ├── RegistBarController.java
         │       │       └── RegistBarForm.java
@@ -39,15 +38,15 @@
         │       └── tiles
         │           └── tiles.xml
         └── webapp
-            └── WEB-INF
-                ├── views
-                │   ├── bar
-                │   │   └── regist.jsp
-                │   ├── common
-                │   │   ├── layout.jsp
-                │   │   └── top.jsp
-                │   └── index.jsp
-                └── web.xml
+            ├── WEB-INF
+            │   ├── views
+            │   │   ├── bar
+            │   │   │   └── regist.jsp
+            │   │   └── common
+            │   │       ├── layout.jsp
+            │   │       └── top.jsp
+            │   └── web.xml
+            └── index.jsp
 ```
 ## Install gradle
 https://gradle.org/  
