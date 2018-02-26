@@ -10,6 +10,8 @@ public class SomeCheckValidator implements ConstraintValidator<SomeCheck, Object
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
 
+        System.out.println("isValid");
+
         if (StringUtils.isEmpty(value)) {
             return true;
         }

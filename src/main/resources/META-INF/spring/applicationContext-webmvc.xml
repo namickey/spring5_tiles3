@@ -13,6 +13,16 @@
     <context:component-scan base-package="demo.controller" />
 
     <mvc:annotation-driven validator="validator" />
+    <mvc:annotation-driven conversion-service="conversionService" />
+
+    <bean id="conversionService"
+        class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="demo.format.StringFormatterFactory" />
+            </set>
+        </property>
+    </bean>
 
     <mvc:resources mapping="/img/**" location="classpath:/static/img/" />
 
