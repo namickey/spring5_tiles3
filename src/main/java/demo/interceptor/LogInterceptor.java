@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import demo.controller.bar.RegistBarController;
+import demo.controller.base.BaseController;
 
 public class LogInterceptor extends HandlerInterceptorAdapter{
 
@@ -14,8 +14,8 @@ public class LogInterceptor extends HandlerInterceptorAdapter{
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         System.out.println("*********************");
         HandlerMethod method = (HandlerMethod) handler;
-        RegistBarController cont = (RegistBarController)method.getBean();
-        System.out.println("preHandle:" + cont.check());
+        BaseController cont = (BaseController)method.getBean();
+        System.out.println("preHandle:" + cont.check(request));
         return true;
     }
 }

@@ -1,5 +1,6 @@
 package demo.controller.bar;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -36,7 +37,8 @@ public class RegistBarController extends BaseController {
     }
 
     @Override
-    public boolean check() {
+    public boolean check(HttpServletRequest request) {
+
         return true;
     }
 }

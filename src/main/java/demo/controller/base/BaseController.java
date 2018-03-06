@@ -1,8 +1,10 @@
 package demo.controller.base;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class BaseController {
 
-    protected boolean check() {
+    public boolean check(HttpServletRequest request) {
         return true;
     }
 }
