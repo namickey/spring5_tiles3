@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import demo.controller.base.BaseController;
+
 @Controller
-public class RegistBarController {
+public class RegistBarController extends BaseController {
 
     @RequestMapping(value = "/bar/regist/index", method = RequestMethod.GET)
     public String index(Model model){
@@ -31,5 +33,10 @@ public class RegistBarController {
         System.out.println(registBarForm.getBarName());
         System.out.println("RegistBarController:regist:end");
         return "redirect:index";
+    }
+
+    @Override
+    public boolean check() {
+        return true;
     }
 }
